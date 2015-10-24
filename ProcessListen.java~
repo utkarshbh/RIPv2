@@ -36,6 +36,7 @@ public class ProcessListen extends UnicastRemoteObject implements ProcessListenI
 			rgs = LocateRegistry.createRegistry(6364);
 			rgs.rebind("processRIPListen", this);
 			localIP = Inet4Address.getLocalHost().getHostAddress();
+			//System.out.println("Listening Process started");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

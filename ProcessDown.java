@@ -28,7 +28,6 @@ public class ProcessDown implements Runnable{
 	 */
 	@Override
 	public void run() {
-		// TODO Auto-generated method stub
 		boolean neighbour = false;
 		boolean availablePath = false;
 		int indexVal = 0;
@@ -51,7 +50,6 @@ public class ProcessDown implements Runnable{
 			for (int i = 0; i < Process.routingTable.size(); i++) {
 				if(Process.routingTable.get(i).getNextHop().equalsIgnoreCase(nodeDownNtwPrefix)){
 					Process.routingTable.get(i).setDistance(Math.abs(99999));
-					//System.out.println("From nextHOP " + Process.routingTable.get(i).getDistance());
 				}
 			}
 			for (int i = 0; i < Process.neighbourIP.size(); i++) {
@@ -62,18 +60,6 @@ public class ProcessDown implements Runnable{
 				} catch(Exception e){
 					e.printStackTrace();
 				}
-			}
-			/*Set<String> valSetIP = Process.neighbourList.keySet();
-			for(String valIP : valSetIP){
-				String neighIP = valIP;
-				try{
-					lookup = LocateRegistry.getRegistry(neighIP, 6364);
-					processListenInter = (ProcessListenInterface) lookup.lookup("processRIPListen");
-					processListenInter.deleteNode(nodeDownNtwPrefix);
-				} catch(Exception e){
-					e.printStackTrace();
-				}
-			}*/
 		}
 		synchronized (Process.class) {
 			if(availablePath == true){

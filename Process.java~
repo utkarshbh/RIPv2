@@ -102,6 +102,7 @@ public class Process extends UnicastRemoteObject implements ProcessInterface{
 	 */
 	@Override
 	public String replyToconnect(String IP) throws RemoteException{
+		// TODO Auto-generated method stub
 		return localIP;
 	}
 
